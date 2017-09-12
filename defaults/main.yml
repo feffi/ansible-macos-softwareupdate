@@ -1,0 +1,7 @@
+---
+macos_softwareupdate:
+  # Download or install only recommended updates (true) or all available updates (false)
+  recommended: true
+
+  # Install software updates (true) or download only (false)
+  install: false

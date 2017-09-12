@@ -1,0 +1,23 @@
+---
+- name: Determine if softwareupdate should install updates
+  set_fact:
+    macos_softwareupdate_action: "--install"
+  when: macos_softwareupdate.install
+
+- name: Determine if softwareupdate should only download updates
+  set_fact:
+    macos_softwareupdate_action: "--download"
+  when: not macos_softwareupdate.install
+
+- name: Determine if softwareupdate should install recommended updates only
+  set_fact:
+    macos_softwareupdate_updates: "--recommended"
+  when: macos_softwareupdate.recommended
+
+- name: Determine if softwareupdate should install all updates
+  set_fact:
+    macos_softwareupdate_updates: "--all"
+  when: not macos_softwareupdate.recommended
+
+- name: Run assembled command
+  command: "{{ 'softwareupdate ' + macos_softwareupdate_action + ' ' + macos_softwareupdate_updates }}"

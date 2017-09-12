@@ -1,0 +1,10 @@
+---
+- hosts: 127.0.0.1
+  connection: local
+  vars:
+    DEBUG: true
+    macos_softwareupdate:
+      recommended: false
+      install: true
+  roles:
+    - ansible-macos-softwareupdate
