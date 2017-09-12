@@ -11,7 +11,4 @@ galaxy_info:
   galaxy_tags:
     - system
     - osx
-    - computername
-    - netbios
-    - hostname
 dependencies: []
