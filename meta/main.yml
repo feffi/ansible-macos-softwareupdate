@@ -11,4 +11,7 @@ galaxy_info:
   galaxy_tags:
     - system
     - osx
+    - packaging
+    - update
+    - software
 dependencies: []
