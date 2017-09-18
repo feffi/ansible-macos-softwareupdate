@@ -14,4 +14,9 @@ galaxy_info:
     - packaging
     - update
     - software
-dependencies: []
+dependencies:
+  - { role: feffi.macos-defaults,
+      macos_defaults: {
+        defaults: []
+      }
+    }

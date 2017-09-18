@@ -1,4 +1,14 @@
 ---
+- name: Set macOS defaults
+  include_role:
+    name: feffi.macos-defaults
+  vars:
+    macos_defaults:
+      defaults:
+        - { domain: "com.apple.SoftwareUpdate", key: "ScheduleFrequency", type: "integer", value: "{{ macos_softwareupdate.frequency }}", description: "Software Update Check Interval set to x days" }
+        - { domain: "com.apple.appstore", key: "ShowDebugMenu", type: "boolean", value: "{{ macos_softwareupdate.debug }}", description: "Show debug menu in AppStore" }
+        - { domain: "com.apple.appstore", key: "WebKitDeveloperExtras", type: "boolean", value: "{{ macos_softwareupdate.webkit }}", description: "Set the Develop menu and the Web Inspector in AppStore" }
+
 - name: Determine if softwareupdate should install updates
   set_fact:
     macos_softwareupdate_action: "--install"

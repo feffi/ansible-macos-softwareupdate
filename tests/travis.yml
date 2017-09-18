@@ -4,7 +4,10 @@
   vars:
     DEBUG: true
     macos_softwareupdate:
+      frequency: 1
       recommended: false
       install: true
+      debug: true
+      webkit: true
   roles:
     - ansible-macos-softwareupdate

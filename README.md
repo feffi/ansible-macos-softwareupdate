@@ -23,11 +23,20 @@ All role based variables are listed below, along with default values:
 
 ```yaml
 macos_softwareupdate:
+  # Software Update Check Interval set to x days
+  frequency: 1
+
   # Download or install only recommended updates (true) or all available updates (false)
   recommended: true
 
   # Install software updates (true) or download only (false)
   install: false
+
+  # Show debug menu in AppStore
+  debug: true
+
+  # Set the Develop menu and the Web Inspector in AppStore
+  webkit: true
 ```
 
 ## Dependencies
@@ -39,9 +48,11 @@ None.
     - hosts: all
       vars:
         macos_softwareupdate:
+          frequency: 1
           recommended: true
           install: false
-
+          debug: true
+          webkit: true
       roles:
         - { role: feffi.macos-softwareupdate }
 ```
@@ -52,8 +63,11 @@ Or with local parameters:
       roles:
         - { role: feffi.macos-softwareupdate,
             macos_softwareupdate: {
+              frequency: 1,
               recommended: true,
-              install: false
+              install: false,
+              debug: true,
+              webkit: true
             }
           }
 ```
