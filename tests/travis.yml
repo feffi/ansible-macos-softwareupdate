@@ -10,4 +10,4 @@
       debug: true
       webkit: true
   roles:
-    - ansible-macos-softwareupdate
+    - { role: ansible-macos-softwareupdate }
