@@ -31,3 +31,5 @@
 
 - name: Run assembled command
   command: "{{ 'softwareupdate ' + macos_softwareupdate_action + ' ' + macos_softwareupdate_updates }}"
+  register: softwareupdate_assembled
+  changed_when: "softwareupdate_assembled.rc != 0 and 'No updates are available.' not in softwareupdate_assembled.stderr"
